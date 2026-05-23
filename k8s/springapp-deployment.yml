@@ -35,10 +35,7 @@ spec:
                   key: MYSQL_USER
 
             - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: secret
-                  key: MYSQL_PASSWORD
+              value: wrongpass
           
           livenessProbe:
             httpGet:
