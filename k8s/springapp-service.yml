@@ -13,4 +13,6 @@ spec:
       targetPort: 8085
       nodePort: 30080
 
-  #minikube service spring-boot-deployment  minikube to access api's
+  #minikube service spring-boot-deployment -n springboot    minikube to access api's
+  # ./run.cmd to run the self hosted runner 
+  #d3JvbmdwYXNz 
