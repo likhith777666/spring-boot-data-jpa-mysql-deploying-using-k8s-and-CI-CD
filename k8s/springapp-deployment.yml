@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-deployment
+  namespace: springboot
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: spring-boot-deployment
+
+  template:
+    metadata:
+      labels:
+        app: spring-boot-deployment
+
+    spec:
+      containers:
+        - name: spring-boot-container
+          image: likhith045/springboot-app:v1
+
+          ports:
+            - containerPort: 8085
+
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/mydb
+
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: MYSQL_USER
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: MYSQL_PASSWORD
