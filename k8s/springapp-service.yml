@@ -7,6 +7,8 @@ spec:
   selector:
     app: spring-boot-deployment
   type: NodePort
+
+  
   ports:
     - protocol: TCP
       port: 8085
