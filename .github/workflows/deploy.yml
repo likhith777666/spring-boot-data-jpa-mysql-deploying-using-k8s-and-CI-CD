@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy to Minikube
         run: |
-          kubectl apply -f k8s/mysql-deployment.yaml
-          kubectl apply -f k8s/mysql-service.yaml
-          kubectl apply -f k8s/app-deployment.yaml
-          kubectl apply -f k8s/app-service.yaml
+          kubectl apply -f k8s/mysql_deployment.yml
+          kubectl apply -f k8s/my-sql-service.yml
+          kubectl apply -f k8s/springapp-deployment.yml
+          kubectl apply -f k8s/springapp-service.yml
