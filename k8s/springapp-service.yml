@@ -12,3 +12,5 @@ spec:
       port: 8085
       targetPort: 8085
       nodePort: 30080
+
+  #minikube service spring-boot-deployment  minikube to access api's
